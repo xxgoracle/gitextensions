@@ -95,7 +95,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildServerIntegration", "B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Externals", "Externals", "{0E859634-B3DF-46AC-A73C-D49734F19D6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Git.hub", "Externals\Git.hub\Git.hub\Git.hub.csproj", "{F50B1DBF-1C9F-4437-87EC-7ABA805CC446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Git.hub", "Externals\Git.hub\Git.hub\Git.hub.csproj", "{F50B1DBF-1C9F-4437-87EC-7ABA805CC446}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitbucket", "Plugins\Bitbucket\Bitbucket.csproj", "{50AEAB6C-83C4-45F8-AA01-90E1405C48AF}"
 EndProject
@@ -180,7 +180,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{17FD2A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtUtilsTests", "UnitTests\GitExtUtils\GitExtUtilsTests.csproj", "{2B9B62FA-3E0C-45C5-9287-68B69413C5DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TextEditor", "Externals\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj", "{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSharpCode.TextEditor", "Externals\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj", "{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitUIPluginInterfacesTests", "UnitTests\Plugins\GitUIPluginInterfacesTests\GitUIPluginInterfacesTests.csproj", "{4DBDE0EB-9E03-48E0-8B1A-338850111373}"
 EndProject
@@ -337,10 +337,10 @@ Global
 		{F01BB9F8-40F5-4D19-A8C1-9ED8E30107B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01BB9F8-40F5-4D19-A8C1-9ED8E30107B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01BB9F8-40F5-4D19-A8C1-9ED8E30107B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DC7D403-484B-43B4-B017-1356397A32CB}.Debug|Any CPU.ActiveCfg = Default|Any CPU
-		{1DC7D403-484B-43B4-B017-1356397A32CB}.Debug|Any CPU.Build.0 = Default|Any CPU
-		{1DC7D403-484B-43B4-B017-1356397A32CB}.Release|Any CPU.ActiveCfg = Default|Any CPU
-		{1DC7D403-484B-43B4-B017-1356397A32CB}.Release|Any CPU.Build.0 = Default|Any CPU
+		{1DC7D403-484B-43B4-B017-1356397A32CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC7D403-484B-43B4-B017-1356397A32CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC7D403-484B-43B4-B017-1356397A32CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC7D403-484B-43B4-B017-1356397A32CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39228D7F-9239-4A2D-8A6F-4D0F7DEB9178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39228D7F-9239-4A2D-8A6F-4D0F7DEB9178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39228D7F-9239-4A2D-8A6F-4D0F7DEB9178}.Release|Any CPU.ActiveCfg = Release|Any CPU
