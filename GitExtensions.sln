@@ -9,7 +9,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtensions", "GitExtensions\GitExtensions.csproj", "{F15A69AF-7EBD-4F69-A026-5071FA3EC61B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1DC7D403-484B-43B4-B017-1356397A32CB} = {1DC7D403-484B-43B4-B017-1356397A32CB}
-		{A426EE0B-E52E-4D74-AF24-06797142D7B2} = {A426EE0B-E52E-4D74-AF24-06797142D7B2}
 		{D4628A13-CD53-401F-A645-CB16FD15ABBB} = {D4628A13-CD53-401F-A645-CB16FD15ABBB}
 		{31D96116-16A6-45C2-9A6D-6DD5A1FC5F20} = {31D96116-16A6-45C2-9A6D-6DD5A1FC5F20}
 		{699CE23D-8BBD-4C15-82E9-7A628ACCA4C6} = {699CE23D-8BBD-4C15-82E9-7A628ACCA4C6}
@@ -38,9 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtensions", "GitExtensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitUI", "GitUI\GitUI.csproj", "{CF5B22E7-230F-4E50-BE88-C4F7023CED2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitCommands", "GitCommands\GitCommands.csproj", "{BD6AA2A2-997D-4AFF-ACC7-B64F6E51D181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitCommands", "GitCommands\GitCommands.csproj", "{BD6AA2A2-997D-4AFF-ACC7-B64F6E51D181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitUIPluginInterfaces", "Plugins\GitUIPluginInterfaces\GitUIPluginInterfaces.csproj", "{27559302-F35E-4B62-A6EC-11FF21A5FA6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitUIPluginInterfaces", "Plugins\GitUIPluginInterfaces\GitUIPluginInterfaces.csproj", "{27559302-F35E-4B62-A6EC-11FF21A5FA6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitStatistics", "Plugins\Statistics\GitStatistics\GitStatistics.csproj", "{92B57383-233E-46AE-8A86-6E98BF349A72}"
 EndProject
@@ -50,13 +49,11 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Setup", "Setup\Setup.wixpro
 		{F01BB9F8-40F5-4D19-A8C1-9ED8E30107B6} = {F01BB9F8-40F5-4D19-A8C1-9ED8E30107B6}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceManager", "ResourceManager\ResourceManager.csproj", "{D3440FD7-AFC5-4351-8741-6CDBF15CE944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceManager", "ResourceManager\ResourceManager.csproj", "{D3440FD7-AFC5-4351-8741-6CDBF15CE944}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gource", "Plugins\Gource\Gource.csproj", "{687A73BB-12A0-4AF7-B420-4A9C47DB75CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteUnusedBranches", "Plugins\DeleteUnusedBranches\DeleteUnusedBranches.csproj", "{921F0443-C3A1-4A09-82E8-C4AFB9654943}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellChecker", "NetSpell.SpellChecker\SpellChecker.csproj", "{A426EE0B-E52E-4D74-AF24-06797142D7B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitImpact", "Plugins\Statistics\GitImpact\GitImpact.csproj", "{0B131F9D-BB10-4C3E-9656-5AB858158DE5}"
 EndProject
@@ -107,7 +104,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsInterop.Vs2012", "Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsInterop.Vs2013", "Plugins\BuildServerIntegration\TfsInterop.Vs2013\TfsInterop.Vs2013.csproj", "{101D3C78-27CC-446A-98EC-E2DE88BF0641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtUtils", "GitExtUtils\GitExtUtils.csproj", "{0F1F1168-A4B2-4FA2-B17B-735140D17F39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitExtUtils", "GitExtUtils\GitExtUtils.csproj", "{0F1F1168-A4B2-4FA2-B17B-735140D17F39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsInterop.Vs2015", "Plugins\BuildServerIntegration\TfsInterop.Vs2015\TfsInterop.Vs2015.csproj", "{6D468574-C232-4FA8-B1CB-F559579F800D}"
 EndProject
@@ -118,7 +115,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtensionsVSIX", "GitExt
 		{F15A69AF-7EBD-4F69-A026-5071FA3EC61B} = {F15A69AF-7EBD-4F69-A026-5071FA3EC61B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConEmuWinForms", "Externals\conemu-inside\ConEmuWinForms\ConEmuWinForms.csproj", "{1DC7D403-484B-43B4-B017-1356397A32CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConEmuWinForms", "Externals\conemu-inside\ConEmuWinForms\ConEmuWinForms.csproj", "{1DC7D403-484B-43B4-B017-1356397A32CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVeyorIntegration", "Plugins\BuildServerIntegration\AppVeyorIntegration\AppVeyorIntegration.csproj", "{39228D7F-9239-4A2D-8A6F-4D0F7DEB9178}"
 EndProject
@@ -211,6 +208,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteUnusedBranchesTests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdysTech.CredentialManager", "Externals\AdysTech.CredentialManager\AdysTech.CredentialManager\AdysTech.CredentialManager.csproj", "{7DFD87C6-BBEF-4029-8F6E-328C2066FB27}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpellChecker", "Externals\NetSpell.SpellChecker\SpellChecker.csproj", "{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -251,10 +250,6 @@ Global
 		{921F0443-C3A1-4A09-82E8-C4AFB9654943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{921F0443-C3A1-4A09-82E8-C4AFB9654943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{921F0443-C3A1-4A09-82E8-C4AFB9654943}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B131F9D-BB10-4C3E-9656-5AB858158DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B131F9D-BB10-4C3E-9656-5AB858158DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B131F9D-BB10-4C3E-9656-5AB858158DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -403,6 +398,10 @@ Global
 		{7DFD87C6-BBEF-4029-8F6E-328C2066FB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFD87C6-BBEF-4029-8F6E-328C2066FB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFD87C6-BBEF-4029-8F6E-328C2066FB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -456,6 +455,7 @@ Global
 		{EFBCA0B9-9E08-4464-BEAA-DAF2FF85C6AB} = {D017F26A-694F-4127-B917-9B1BD3F01E2F}
 		{3FD5B353-17C0-4122-A693-27B707D06EFF} = {C2276A26-13DF-485A-8B2C-414CF507798F}
 		{7DFD87C6-BBEF-4029-8F6E-328C2066FB27} = {0E859634-B3DF-46AC-A73C-D49734F19D6A}
+		{28BA9FD5-CE46-4E0B-A42B-0EEECFD59BB8} = {0E859634-B3DF-46AC-A73C-D49734F19D6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECECB7EA-BCCF-44AD-B63E-C2FA45589FB0}
