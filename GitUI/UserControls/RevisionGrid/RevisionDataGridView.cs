@@ -320,7 +320,9 @@ namespace GitUI.UserControls.RevisionGrid
             _backgroundScrollTo = 0;
 
             // Force the background thread to be killed, we need to be sure no background processes are running. Not the best practice, but safe.
-            _backgroundThread.Abort();
+            // TODO: not supported in .NET Core
+            //_backgroundThread.Abort();
+            _backgroundThread = null;
 
             // Set rowcount to 0 first, to ensure it is not possible to select or redraw, since we are about te delete the data
             SetRowCount(0);
