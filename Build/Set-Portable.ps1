@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param(
-    [Parameter(Mandatory=$false, Position=1)]
-    [string] $Configuration="Release",
+    [Parameter(Mandatory=$true, Position=1)]
+    [string] $TfmConfiguration,
     [switch] $IsPortable = $false
 )
 
@@ -9,7 +9,7 @@ Write-Host ---------------------------------------------------------------------
 Write-Host "Alter Config IsPortable:$IsPortable"
 Write-Host ----------------------------------------------------------------------
 #$pth = [System.IO.Path]::Combine($PSScriptRoot,"..\GitExtensions\bin\Release\GitExtensions.exe.config")
-$pth = Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,"..\GitExtensions\bin\$Configuration\GitExtensions.exe.config"))
+$pth = Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,"..\GitExtensions\bin\$TfmConfiguration\GitExtensions.exe.config"))
 Write-Host $pth
 if($pth){
     $doc= [xml](Get-Content $pth)

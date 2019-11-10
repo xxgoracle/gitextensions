@@ -1,33 +1,33 @@
 [CmdletBinding()]
-param (
-   [string] $Configuration = 'Release'
+Param(
+    [Parameter(Mandatory=$true, Position=1)]
+    [string] $TfmConfiguration
 )
 
-pushd $PSScriptRoot
+Push-Location $PSScriptRoot
 try {
-    Write-Host "Copying the latest English translation before the update..."
     $translationsFolder = Resolve-Path "$PSScriptRoot\..\..\GitUI\Translation";
-    $releaseTranslationsFolder = Resolve-Path ..\..\GitExtensions\bin\$Configuration\*\Translation
-    Write-Host "Copying '$translationsFolder\English*.xlf' to '$releaseTranslationsFolder'"
+    $releaseTranslationsFolder = Resolve-Path ..\..\GitExtensions\bin\$TfmConfiguration\Translation
+    Write-Host "[LOG] ...copying '$translationsFolder\English*.xlf' to '$releaseTranslationsFolder'" -ForegroundColor Green
     xcopy "$translationsFolder\English*.xlf" "$releaseTranslationsFolder" /Y
 
     $src = Split-Path -Path $releaseTranslationsFolder -Parent
-    pushd "$src"
+    Push-Location "$src"
     try {
-        Write-Host "Updating the English translation..."
+        Write-Host "[LOG] ...updating the English resources" -ForegroundColor Green
         Start-Process -FilePath "$src\TranslationApp.exe" -ArgumentList "update" -Wait
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "[ERROR] Failed to update English translations..."
+            Write-Host "[ERROR] Failed to update English translations..." -ForegroundColor Red
             exit -1
         }
     }
     finally {
-        popd
+        Pop-Location
     }
 
-    Write-Host "Copying '$releaseTranslationsFolder\English*.xlf' to '$translationsFolder'"
+    Write-Host "[LOG] ...copying '$releaseTranslationsFolder\English*.xlf' to '$translationsFolder'" -ForegroundColor Green
     xcopy "$releaseTranslationsFolder\English*.xlf" "$translationsFolder"  /Y
 }
 finally {
-    popd
+    Pop-Location
 }
