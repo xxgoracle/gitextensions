@@ -1,12 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFramework>net461</TargetFramework>
     <CodeAnalysisRuleSet>..\..\GitExtensionsTest.ruleset</CodeAnalysisRuleSet>
-    <GenerateDocumentationFile>false</GenerateDocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    
+
     <!-- TODO once all project migrated to SDK-style, remove this and move properties to Directory.Build.props -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
