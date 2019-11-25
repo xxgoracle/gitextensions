@@ -21,7 +21,6 @@ $ErrorActionPreference = "Stop"
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 $env:SKIP_PAUSE=1
-$LastExitCode = 0
 $TfmConfiguration = "$Configuration\net461";
 
 Push-Location $PSScriptRoot\..\
@@ -68,14 +67,14 @@ try{
 
         Write-Host "[LOG] ...building native" -ForegroundColor Green
         & .\Setup\BuildGitExtNative.cmd $Configuration $target
-        if ($LastExitCode -ne 0) {
+        if ($LASTEXITCODE -ne 0) {
             Write-Host "[ERROR] Build failed..." -ForegroundColor Red
             return -1
         }
         
         Write-Host "[LOG] ...building the solution" -ForegroundColor Green
         & .\Setup\hMSBuild -notamd64 -no-cache -m $Solution /p:Configuration=$Configuration /t:$target /nologo /v:$verbosity $binLog
-        if ($LastExitCode -ne 0) {
+        if ($LASTEXITCODE -ne 0) {
             Write-Host "[ERROR] Build failed..." -ForegroundColor Red
 
             if ($env:APPVEYOR) {
@@ -93,9 +92,11 @@ try{
 
     if ($test -eq $true) {
         Write-Host "[LOG] Running tests" -ForegroundColor Green
-        & .\Build\Run-Tests.ps1
-        if ($LastExitCode -ne 0) {
-            Write-Host "[ERROR] Tests failed..." -ForegroundColor Red
+        . .\Build\Run-Tests.ps1
+
+        $result = Start-Tests 
+        if ($result -ne 0) {
+            Write-Host "[ERROR] Tests failed with exit code: $result..." -ForegroundColor Red
             return -3
         }
     }
