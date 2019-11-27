@@ -16,6 +16,7 @@ Param(
 )
 
 # break on errors
+$LASTEXITCODE = 0
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'

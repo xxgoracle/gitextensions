@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
+  
     <Target Name="CopyPlugin" 
-            BeforeTarget="Build">
+            BeforeTargets="GetTargetPath"
+            Condition=" '$(Configuration)' == 'Debug' And '$(ProjectName)' != 'GitUIPluginInterfaces'">
+            
+
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)GitExtensions\bin\Debug\net461\Plugins\</OutDir>
+<!--
+    <OutputPath>C:\Development\gitextensions\GitExtensions\bin\Debug\net461\Plugins\</OutputPath>
+    <TargetDir>C:\Development\gitextensions\GitExtensions\bin\Debug\net461\Plugins\</TargetDir>
+    <TargetPath>$(TargetDir)$(TargetFileName)</TargetPath>
+-->
+  </PropertyGroup>
+
+    <Error
+            Text="'SolutionDir' is unset"
+            Condition="'$(SolutionDir)' == ''" />
+            
+        <Message Text="SolutionDir: $(SolutionDir)" Importance="High" />
         <Message Text="Configuration: $(Configuration)" Importance="High" />
         <Message Text="MSBuildProjectDirectory: $(MSBuildProjectDirectory)" Importance="High" />
         <Message Text="MSBuildProjectName: $(MSBuildProjectName)" Importance="High" />
         <Message Text="DestinationFolder: $(DestinationFolder)" Importance="High" />
+        <Message Text="BaseOutputPath: $(BaseOutputPath)" Importance="High" />
+        <Message Text="OutDir: $(OutDir)" Importance="High" />
         <Message Text="OutputPath: $(OutputPath)" Importance="High" />
-        <Message Text="SourceFiles: $(SourceFiles)" Importance="High" />
-        <Message Text="DocumentationFile: $(DocumentationFile)" Importance="High" />
+        <Message Text="TargetDir: $(TargetDir)" Importance="High" />
+        <Message Text="TargetPath: $(TargetPath)" Importance="High" />
+        <Message Text="......." Importance="High" />
     </Target>
 </Project>

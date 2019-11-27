@@ -50,7 +50,7 @@
     <EmbeddedResource Include="AutoCompleteRegexes.txt" />
   </ItemGroup>
 
-  <Target Name="AddPluginBinaries" AfterTargets="ResolveProjectReferences">
+  <Target Name="AddPluginBinaries" AfterTargets="ResolveProjectReferences1">
     <ItemGroup>
       <!-- Plugin binaries-->
       <PluginProjects Include="..\Plugins\*\*.csproj;..\Plugins\*\*\*.csproj" />
