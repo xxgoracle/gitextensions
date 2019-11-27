@@ -66,7 +66,7 @@ try{
         $target = if ($rebuild -eq $true) { "Rebuild" } else { "Build" }
 
         Write-Host "[LOG] ...building native" -ForegroundColor Green
-        & .\Setup\BuildGitExtNative.cmd $Configuration $target
+        #& .\Setup\BuildGitExtNative.cmd $Configuration $target
         if ($LASTEXITCODE -ne 0) {
             Write-Host "[ERROR] Build failed..." -ForegroundColor Red
             return -1

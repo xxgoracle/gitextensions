@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+    <Target Name="CopyPlugin" 
+            BeforeTarget="Build">
+        <Message Text="Configuration: $(Configuration)" Importance="High" />
+        <Message Text="MSBuildProjectDirectory: $(MSBuildProjectDirectory)" Importance="High" />
+        <Message Text="MSBuildProjectName: $(MSBuildProjectName)" Importance="High" />
+        <Message Text="DestinationFolder: $(DestinationFolder)" Importance="High" />
+        <Message Text="OutputPath: $(OutputPath)" Importance="High" />
+        <Message Text="SourceFiles: $(SourceFiles)" Importance="High" />
+        <Message Text="DocumentationFile: $(DocumentationFile)" Importance="High" />
+    </Target>
+</Project>
