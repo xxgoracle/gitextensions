@@ -1,0 +1,61 @@
+<Project>
+
+  <!--
+    ============================================================
+                       _PublishTranslations
+
+    Copies all available translations to the publish directory.
+    ============================================================
+    -->
+  <Target Name="_PublishTranslations">
+    <Copy SourceFiles="@(Translations)" DestinationFolder="$(PublishDir)Translation" ContinueOnError="false" />
+  </Target>
+
+  <!--
+    ============================================================
+                       _PublishExtraDependecies
+
+    Copies additional files (e.g. EasyHook dlls) to the publish directory.
+    ============================================================
+    -->
+  <Target Name="_PublishExtraDependecies">
+    <Copy SourceFiles="$(SolutionDir)\Externals\EasyHook\EasyHookDll\Build\Release\x64\EasyHook64.dll" DestinationFolder="$(PublishDir)" />
+    <Copy SourceFiles="$(SolutionDir)\Externals\EasyHook\EasyHookDll\Build\Release\x86\EasyHook32.dll" DestinationFolder="$(PublishDir)" />
+  </Target>
+
+  <!--
+    ============================================================
+                       CreatePortable
+
+    Creates a portable archive.
+    ============================================================
+    -->
+
+  <Target Name="CreatePortable" AfterTargets="Publish" DependsOnTargets="_PublishTranslations;_PublishExtraDependecies">
+    <PropertyGroup>
+      <!-- Resolve app.config, so we can set/unset "portable" flag -->
+      <_PublishAppConfig>$([System.IO.Path]::GetFileName('$(TargetAppConfig)'))</_PublishAppConfig>
+      <_PublishAppConfigPath>$([System.IO.Path]::Combine('$(PublishDir)', '$(_PublishAppConfig)'))</_PublishAppConfigPath>
+
+      <!-- Resolve the output file -->
+      <_PublishPortablePath>$([MSBuild]::NormalizePath('$(ArtifactsPublishDir)', 'Portable.zip'))</_PublishPortablePath>
+      <!-- We want to archive the whole publish folder, so get one level up -->
+      <_PublishedPath>$([MSBuild]::NormalizeDirectory('$(PublishDir)', '..'))</_PublishedPath>
+    </PropertyGroup>
+
+    <!-- Mark the package as "portable" -->
+    <XmlPoke XmlInputPath="$(_PublishAppConfigPath)"
+            Query="configuration/applicationSettings/GitCommands.Properties.Settings/setting[@name='IsPortable']/value" 
+            Value="True" />
+
+    <ZipDirectory
+            SourceDirectory="$(_PublishedPath)"
+            DestinationFile="$(_PublishPortablePath)" />
+
+    <!-- Reset the "portable" flag -->
+    <XmlPoke XmlInputPath="$(_PublishAppConfigPath)"
+            Query="configuration/applicationSettings/GitCommands.Properties.Settings/setting[@name='IsPortable']/value" 
+            Value="False" />
+  </Target>
+
+</Project>
