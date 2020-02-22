@@ -59,8 +59,11 @@
       <_PublishAppConfigPath>$([System.IO.Path]::Combine('$(PublishDir)', '$(_PublishAppConfig)'))</_PublishAppConfigPath>
 
       <!-- Resolve the output file -->
-      <_PublishPortableFileName>Portable-$(CurrentBuildVersion.ToString()).zip</_PublishPortableFileName>
+      <_PublishPortableFileNameSuffix Condition="'$(GitCommit)' == ''">-$(CurrentBuildVersion.ToString())</_PublishPortableFileNameSuffix>
+      <_PublishPortableFileNameSuffix Condition="'$(GitCommit)' != ''">-$(GitCommit)</_PublishPortableFileNameSuffix>
+      <_PublishPortableFileName>GitExtensions-portable$(_PublishPortableFileNameSuffix).zip</_PublishPortableFileName>
       <_PublishPortablePath>$([MSBuild]::NormalizePath('$(ArtifactsPublishDir)', '$(_PublishPortableFileName)'))</_PublishPortablePath>
+
       <!-- We want to archive the whole publish folder, so get one level up -->
       <_PublishedPath>$([MSBuild]::NormalizeDirectory('$(PublishDir)', '..'))</_PublishedPath>
     </PropertyGroup>
