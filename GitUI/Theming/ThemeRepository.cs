@@ -95,7 +95,7 @@ namespace GitUI.Theming
 
             if (UserThemesDirectory == null)
             {
-                throw new NotSupportedException("There is no directory for custom user themes in portable mode");
+                throw new InvalidOperationException("There is no directory for custom user themes in portable mode");
             }
 
             return Path.Combine(UserThemesDirectory, id.Name + Extension);
